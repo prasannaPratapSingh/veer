@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  --color-brand-red: #E50914;
+  --color-brand-red-dark: #990000;
+}
+
+/* Custom keyframes for the infinite scrolling marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Custom split text style to match the Figma mockup */
+.split-text-red {
+  background: linear-gradient(to bottom, var(--color-brand-red) 50%, var(--color-brand-red-dark) 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom background gradient text (gray to black) for "BATMAN" */
+.batman-bg-text {
+  background: linear-gradient(to top, #2c2c2c 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Extra utility for custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* Modal Entrance Animations */
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-backdrop-in {
+  animation: backdropFadeIn 0.22s ease-out forwards;
+}
+
+.animate-modal-in {
+  animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
