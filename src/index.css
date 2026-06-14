@@ -84,3 +84,20 @@ html {
 .animate-modal-in {
   animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Offset for sticky header and sticky sub-navigation in Case Study page */
+[id="overview"],
+[id="problem"],
+[id="goals"],
+[id="users"],
+[id="research"],
+[id="solution"],
+[id="features"],
+[id="system"],
+[id="journey"],
+[id="challenges"],
+[id="impact"],
+[id="future"],
+[id="reflection"] {
+  scroll-margin-top: 116px;
+}

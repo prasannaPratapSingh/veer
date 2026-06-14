@@ -483,40 +483,42 @@ const CaseStudy = () => {
     <div className="bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
       
       {/* HEADER */}
-      <header className="w-full max-w-7xl mx-auto px-6 py-8 md:py-10 flex items-center justify-between relative z-50">
-        <Link to="/" className="font-bebas text-3xl font-bold tracking-wider text-brand-red hover:text-white transition-colors duration-300">
-          KARNVEER
-        </Link>
-        <nav className="hidden md:flex items-center space-x-10">
-          <Link to="/" className="font-sans text-xs font-bold tracking-[0.2em] text-brand-red relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red">
-            HOME
+      <header className="fixed top-0 left-0 right-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-neutral-900/40">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link to="/" className="font-bebas text-3xl font-bold tracking-wider text-brand-red hover:text-white transition-colors duration-300">
+            KARNVEER
           </Link>
-          <Link to="/#work" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
-            WORK
-          </Link>
-          <Link to="/#about" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
-            ABOUT
-          </Link>
-          <a 
-            href="/Karnveer_Dixit_Resume_Updated.pdf" 
-            download="Karnveer_Dixit_Resume_Updated.pdf" 
-            className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300"
-          >
-            RESUME
-          </a>
-        </nav>
-        <div>
-          <Link 
-            to="/#connect" 
-            className="font-sans text-xs font-bold tracking-[0.15em] bg-brand-red hover:bg-[#ff1a1a] text-white px-6 py-3 rounded-none flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20"
-          >
-            CONTACT ME <span className="text-sm">→</span>
-          </Link>
+          <nav className="hidden md:flex items-center space-x-10">
+            <Link to="/" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
+              HOME
+            </Link>
+            <Link to="/#work" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
+              WORK
+            </Link>
+            <Link to="/#about" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
+              ABOUT
+            </Link>
+            <a 
+              href="/Karnveer_Dixit_Resume_Updated.pdf" 
+              download="Karnveer_Dixit_Resume_Updated.pdf" 
+              className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300"
+            >
+              RESUME
+            </a>
+          </nav>
+          <div>
+            <a 
+              href="#connect" 
+              className="font-sans text-xs font-bold tracking-[0.15em] bg-brand-red hover:bg-[#ff1a1a] text-white px-6 py-3 rounded-none flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20"
+            >
+              CONTACT ME <span className="text-sm">→</span>
+            </a>
+          </div>
         </div>
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative py-20 sm:py-28 max-w-7xl mx-auto px-6 z-20 border-b border-neutral-900/60">
+      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 max-w-7xl mx-auto px-6 z-20 border-b border-neutral-900/60">
         
         {/* Ambient Glows at the Bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-[radial-gradient(ellipse_at_bottom,rgba(229,9,20,0.35)_0%,transparent_75%)] pointer-events-none z-0"></div>
@@ -580,7 +582,7 @@ const CaseStudy = () => {
       </section>
 
       {/* STICKY SUB-NAVIGATION */}
-      <div className="sticky top-0 bg-black/90 backdrop-blur-md border-b border-neutral-900/60 z-40 hidden md:block py-4">
+      <div className="sticky top-[68px] bg-black/90 backdrop-blur-md border-b border-neutral-900/60 z-40 hidden md:block py-4">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-[10px] font-bold tracking-widest text-neutral-400">
           <a href="#overview" className="hover:text-brand-red transition-colors">OVERVIEW</a>
           <a href="#problem" className="hover:text-brand-red transition-colors">PROBLEM</a>

@@ -50,32 +50,9 @@ const Home = () => {
   return (
     <div className="bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
       
-      {/* SECTION 1: HERO */}
-      <div className="min-h-screen flex flex-col justify-between relative overflow-hidden border-b border-neutral-900/40">
-        
-        {/* Background Layer (Ambient, Text, and Illustration) */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-10">
-          {/* Background Ambient Glows */}
-          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-brand-red/5 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[20%] right-[10%] w-[450px] h-[450px] bg-brand-red/10 rounded-full blur-[150px]"></div>
-
-          {/* Huge Backdrop "BATMAN" Text */}
-          <div className="absolute left-[6vw] lg:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] bottom-0 text-[16vw] lg:text-[14vw] font-bebas font-black tracking-[0.05em] batman-bg-text z-0 uppercase leading-none">
-            BATMAN
-          </div>
-
-          {/* Batman Image Container */}
-          <div className="absolute right-0 bottom-0 top-0 w-full lg:w-1/2 flex items-end justify-end z-10">
-            <img 
-              src={batmanImg} 
-              alt="Karnveer Dixit | Batman Design" 
-              className="h-[65vh] sm:h-[70vh] lg:h-[96vh] xl:h-[105vh] w-auto max-w-none object-contain object-bottom translate-x-[15%] sm:translate-x-[10%] lg:translate-x-[5%] xl:translate-x-[1%] opacity-35 lg:opacity-100 transition-all duration-300 filter contrast-[1.15] brightness-[0.95]"
-            />
-          </div>
-        </div>
-
-        {/* Header */}
-        <header className="w-full max-w-7xl mx-auto px-6 py-8 md:py-10 flex items-center justify-between relative z-50">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-neutral-900/40">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="font-bebas text-3xl font-bold tracking-wider text-brand-red hover:text-white transition-colors duration-300">
             KARNVEER
@@ -110,10 +87,35 @@ const Home = () => {
               CONTACT ME <span className="text-sm">→</span>
             </a>
           </div>
-        </header>
+        </div>
+      </header>
+
+      {/* SECTION 1: HERO */}
+      <div className="min-h-screen flex flex-col justify-between relative overflow-hidden border-b border-neutral-900/40">
+        
+        {/* Background Layer (Ambient, Text, and Illustration) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-10">
+          {/* Background Ambient Glows */}
+          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-brand-red/5 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-[450px] h-[450px] bg-brand-red/10 rounded-full blur-[150px]"></div>
+
+          {/* Huge Backdrop "BATMAN" Text */}
+          <div className="absolute left-[6vw] lg:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] bottom-0 text-[16vw] lg:text-[14vw] font-bebas font-black tracking-[0.05em] batman-bg-text z-0 uppercase leading-none">
+            BATMAN
+          </div>
+
+          {/* Batman Image Container */}
+          <div className="absolute right-0 bottom-0 top-0 w-full lg:w-1/2 flex items-end justify-end z-10">
+            <img 
+              src={batmanImg} 
+              alt="Karnveer Dixit | Batman Design" 
+              className="h-[65vh] sm:h-[70vh] lg:h-[96vh] xl:h-[105vh] w-auto max-w-none object-contain object-bottom translate-x-[15%] sm:translate-x-[10%] lg:translate-x-[5%] xl:translate-x-[1%] opacity-35 lg:opacity-100 transition-all duration-300 filter contrast-[1.15] brightness-[0.95]"
+            />
+          </div>
+        </div>
 
         {/* Hero Main Section */}
-        <main className="flex-grow flex items-center relative z-20 max-w-7xl w-full mx-auto px-6 py-12 md:py-16">
+        <main className="flex-grow flex items-center relative z-20 max-w-7xl w-full mx-auto px-6 pt-24 pb-12 md:pt-32 md:pb-16">
           <div className="w-full lg:max-w-[58%] flex flex-col justify-center relative z-20">
             
             {/* Content Container */}
@@ -147,7 +149,7 @@ const Home = () => {
                   VIEW MY WORK <span className="text-base">→</span>
                 </a>
                 <a 
-                  href="mailto:dixitkarnveer@gmail.com" 
+                  href="#bat-signal" 
                   className="font-sans text-xs sm:text-sm font-bold tracking-[0.2em] bg-transparent border border-brand-red hover:bg-brand-red/10 text-white px-8 py-4 transition-all duration-300 hover:scale-105 active:scale-95"
                 >
                   LET'S CONNECT
@@ -189,7 +191,7 @@ const Home = () => {
       </div>
 
       {/* SECTION 2: SELECTED WORK */}
-      <section id="work" className="relative py-24 sm:py-32 max-w-7xl mx-auto px-6 z-20">
+      <section id="work" className="relative py-24 sm:py-32 max-w-7xl mx-auto px-6 z-20 scroll-mt-24">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between w-full mb-16 gap-6">
@@ -376,7 +378,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 3: ABOUT ME */}
-      <section id="about" className="relative py-24 sm:py-32 border-t border-neutral-900/60 bg-black z-20">
+      <section id="about" className="relative py-24 sm:py-32 border-t border-neutral-900/60 bg-black z-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -474,7 +476,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 4: CONTACT & FOOTER */}
-      <section id="connect" className="relative py-24 sm:py-32 border-t border-neutral-900/60 bg-black z-20 overflow-hidden">
+      <section id="connect" className="relative py-24 sm:py-32 border-t border-neutral-900/60 bg-black z-20 overflow-hidden scroll-mt-24">
         
         {/* Red gradient radial glow at the top of the section */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[250px] bg-[radial-gradient(ellipse_at_top,rgba(229,9,20,0.18)_0%,transparent_70%)] pointer-events-none z-0"></div>
@@ -505,7 +507,7 @@ const Home = () => {
             </p>
 
             {/* CTA Button */}
-            <div>
+            <div id="bat-signal" className="scroll-mt-24">
               <a 
                 href="mailto:dixitkarnveer@gmail.com" 
                 className="inline-flex items-center gap-3 font-sans text-xs sm:text-sm font-bold tracking-[0.2em] bg-brand-red hover:bg-[#ff1a1a] text-white px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/25 uppercase"
@@ -631,7 +633,7 @@ const Home = () => {
             </div>
 
             <h3 className="font-bebas text-4xl text-white tracking-wider mb-3 leading-tight">
-              CASE FILE LOCKED
+              Coming Soon
             </h3>
             
             <p className="font-sans text-neutral-400 text-xs sm:text-sm leading-relaxed mb-8 max-w-xs">
