@@ -1265,7 +1265,7 @@ const CaseStudy = () => {
       </section>
 
       {/* FOOTER CALL TO ACTION exactly matching finalreflection.png */}
-      <section className="relative py-20 border-t border-neutral-900/60 bg-black z-20">
+      <section className="relative py-20 border-t border-transparent bg-black z-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:justify-between md:items-center gap-8">
           <div>
             <span className="font-sans text-[10px] font-bold text-neutral-500 tracking-[0.25em] uppercase block mb-2">
@@ -1293,7 +1293,7 @@ const CaseStudy = () => {
       </section>
 
       {/* SECTION 4: CONTACT & FOOTER */}
-      <section id="connect" className="relative py-24 sm:py-32 border-t border-neutral-900/60 bg-black z-20 overflow-hidden">
+      <section id="connect" className="relative py-24 sm:py-32 border-t border-transparent bg-black z-20 overflow-hidden">
         
         {/* Red gradient radial glow at the top of the section */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[250px] bg-[radial-gradient(ellipse_at_top,rgba(229,9,20,0.18)_0%,transparent_70%)] pointer-events-none z-0"></div>
@@ -1306,7 +1306,7 @@ const CaseStudy = () => {
           <img 
             src={lastSectionImg} 
             alt="Karnveer Dixit | Contact Batman Design" 
-            className="h-full w-auto max-w-none object-contain object-top select-none pointer-events-none opacity-25 lg:opacity-100 transition-opacity duration-300 translate-x-[10%] lg:translate-x-0" 
+            className="h-full w-auto max-w-none object-contain object-bottom select-none pointer-events-none opacity-25 lg:opacity-100 transition-opacity duration-300 translate-x-[10%] lg:translate-x-0" 
           />
         </div>
 
@@ -1335,7 +1335,7 @@ const CaseStudy = () => {
           </div>
 
           {/* Divider line above contact info columns */}
-          <div className="border-t border-neutral-900/60 my-16"></div>
+          <div className="border-t border-transparent my-16"></div>
 
           {/* Contact Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8 relative z-20">
@@ -1347,7 +1347,7 @@ const CaseStudy = () => {
               </span>
               <a 
                 href="mailto:dixitkarnveer@gmail.com" 
-                className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center underline underline-offset-4"
+                className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center"
               >
                 <svg className="w-4 h-4 text-brand-red inline-block mr-2.5 align-middle" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -1367,7 +1367,7 @@ const CaseStudy = () => {
                   href="https://www.linkedin.com/in/karnveer-dixit-9b5bb3333?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center underline underline-offset-4"
+                  className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center"
                 >
                   <svg className="w-4 h-4 text-brand-red inline-block mr-2.5 align-middle" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.98 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.222 0z"/>
@@ -1378,7 +1378,7 @@ const CaseStudy = () => {
                   href="https://www.instagram.com/_karn.ux?igsh=MXh3MjZua2NxMTU1eA==" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center underline underline-offset-4"
+                  className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center"
                 >
                   <svg className="w-4 h-4 text-brand-red inline-block mr-2.5 align-middle" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -1408,7 +1408,7 @@ const CaseStudy = () => {
           </div>
 
           {/* Divider line above copyright footer */}
-          <div className="border-t border-neutral-900/60 mt-16 mb-8"></div>
+          <div className="border-t border-transparent mt-16 mb-8"></div>
 
           {/* Footer Copyright Row */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-20 text-[10px] font-sans font-medium text-neutral-600 uppercase tracking-widest">

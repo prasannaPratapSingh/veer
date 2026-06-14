@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  cursor: none !important;
+}
+
 @theme {
   --font-bebas: "Bebas Neue", sans-serif;
   --font-sans: "Montserrat", sans-serif;
