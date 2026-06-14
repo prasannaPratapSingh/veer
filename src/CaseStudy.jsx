@@ -4,6 +4,9 @@ import sehatImg from './assets/section3.png';
 import colorsImg from './assets/colors.png';
 import r2rLogo from './assets/r2r_logo.png';
 import lastSectionImg from './assets/lasthomesection.png';
+import medicalSummImg from './assets/medicalSumm.png';
+import sosImg from './assets/SOS.png';
+import appointmentsImg from './assets/appointments.png';
 
 const SummaryMockup = () => (
   <div className="w-full max-w-[400px] aspect-[184/145] bg-[#050505] border border-neutral-900/80 p-6 flex flex-col gap-4 rounded-2xl relative overflow-hidden group">
@@ -156,7 +159,7 @@ const CaseStudy = () => {
     {
       num: "01",
       title: "MEDICAL REPORTS REMAIN OPAQUE",
-      desc: "Most platforms show reports as raw PDFs. Users get medical jargon with zero context — anxiety instead of clarity."
+      desc: "Most platforms show reports as raw PDFs. Users get medical jargon with zero context , anxiety instead of clarity."
     },
     {
       num: "02",
@@ -176,7 +179,7 @@ const CaseStudy = () => {
     {
       num: "05",
       title: "NO SENSE OF COMMUNITY",
-      desc: "Health is social. Support, peer knowledge, shared coping — none exist in current platforms."
+      desc: "Health is social. Support, peer knowledge, shared coping , none exist in current platforms."
     },
     {
       num: "06",
@@ -188,7 +191,7 @@ const CaseStudy = () => {
   const businessGoals = [
     {
       title: "ESTABLISH A DEFENSIBLE MARKET POSITION",
-      desc: "Move from reactive summaries to proactive intelligence — AI spotting patterns across historical reports."
+      desc: "Move from reactive summaries to proactive intelligence , AI spotting patterns across historical reports."
     },
     {
       title: "DRIVE RETENTION THROUGH ECOSYSTEM LOCK-IN",
@@ -207,11 +210,11 @@ const CaseStudy = () => {
     },
     {
       title: "FEEL SAFE IN ANY SITUATION",
-      desc: "From routine checkups to roadside accidents — help is one tap away; the app has their back."
+      desc: "From routine checkups to roadside accidents , help is one tap away; the app has their back."
     },
     {
       title: "MANAGE HEALTH, NOT CHASE INFORMATION",
-      desc: "Consolidate health records so users spend less time searching, more time living — health proactively managed."
+      desc: "Consolidate health records so users spend less time searching, more time living , health proactively managed."
     }
   ];
 
@@ -220,7 +223,7 @@ const CaseStudy = () => {
       name: "ARJUN RAO",
       age: "26",
       tagline: "BEREAVED ONCE, BENGALURU",
-      quote: "I want a single app that handles everything — I don't have time to manage five different health apps.",
+      quote: "I want a single app that handles everything , I don't have time to manage five different health apps.",
       targets: ["SIMPLIFIED RECORDS", "QUICK DOCTOR BOOKING", "AMBULANCE TRACKING"],
       initial: "AR"
     },
@@ -228,7 +231,7 @@ const CaseStudy = () => {
       name: "PRIYA DESAI",
       age: "40",
       tagline: "WORKING MOTHER, PUNE",
-      quote: "I manage health for my whole family — I need peace of mind, not more stress.",
+      quote: "I manage health for my whole family , I need peace of mind, not more stress.",
       targets: ["FAMILY ACCOUNTS", "PREVENTATIVE CARE", "HEALTH DOSSIER"],
       initial: "PD"
     },
@@ -245,7 +248,7 @@ const CaseStudy = () => {
   const researchInsights = [
     {
       title: "MEDICAL REPORTS TRIGGER ANXIETY, NOT ACTION",
-      desc: "82% of participants got a lab report but couldn't act without calling a doctor or googling. Information existed — understanding did not."
+      desc: "82% of participants got a lab report but couldn't act without calling a doctor or googling. Information existed , understanding did not."
     },
     {
       title: "EMERGENCY MOMENTS EXPOSE A TERRIFYING VOID",
@@ -257,7 +260,7 @@ const CaseStudy = () => {
     },
     {
       title: "COMMUNITY & PEER SUPPORT IS UNDERUTILISED",
-      desc: "Participants with chronic conditions sought peer communities. None found one inside a healthcare app — they used WhatsApp."
+      desc: "Participants with chronic conditions sought peer communities. None found one inside a healthcare app , they used WhatsApp."
     },
     {
       title: "MOBILE-FIRST MEANS THUMB-FIRST",
@@ -279,12 +282,12 @@ const CaseStudy = () => {
     {
       num: "03",
       title: "ONE ECOSYSTEM",
-      desc: "Appointments, records, checklists, community — one app, one profile, zero switching."
+      desc: "Appointments, records, checklists, community , one app, one profile, zero switching."
     },
     {
       num: "04",
       title: "ACCESSIBLE BY DEFAULT",
-      desc: "Large targets, clear hierarchy, bottom-anchored navigation — for every user, every situation."
+      desc: "Large targets, clear hierarchy, bottom-anchored navigation , for every user, every situation."
     }
   ];
 
@@ -292,7 +295,7 @@ const CaseStudy = () => {
     {
       pill: "FEATURE 01 · AI INTELLIGENCE",
       title: "MEDICAL SUMMARIES THAT ACTUALLY MAKE SENSE",
-      desc: "A doctor spends 7 minutes explaining a report. The AI does it in 7 seconds — in plain language. Users upload any medical document and receive a structured summary: what it means, what's concerning, what to do next.",
+      desc: "A doctor spends 7 minutes explaining a report. The AI does it in 7 seconds , in plain language. Users upload any medical document and receive a structured summary: what it means, what's concerning, what to do next.",
       bullets: [
         {
           bold: "Progressive disclosure",
@@ -304,7 +307,7 @@ const CaseStudy = () => {
         },
         {
           bold: "Action cards",
-          text: "Each summary ends with a suggested next step — book a follow-up, dietary change."
+          text: "Each summary ends with a suggested next step , book a follow-up, dietary change."
         },
         {
           bold: "Accessible language",
@@ -315,8 +318,8 @@ const CaseStudy = () => {
     },
     {
       pill: "FEATURE 02 · SAFETY INFRASTRUCTURE",
-      title: "EMERGENCY & ACCIDENT REPORTING - A NEW CATEGORY",
-      desc: "The most crucial feature in s.e.h.a.t. — and the one with zero competitors. One-tap SOS sends location to emergency contacts and nearest ambulance simultaneously. The accident reporting flow lets users report incidents they witness — a civic safety network.",
+      title: "EMERGENCY & ACCIDENT REPORTING , A NEW CATEGORY",
+      desc: "The most crucial feature in s.e.h.a.t , and the one with zero competitors. One-tap SOS sends location to emergency contacts and nearest ambulance simultaneously. The accident reporting flow lets users report incidents they witness , a civic safety network.",
       bullets: [
         {
           bold: "Panic state UI",
@@ -340,7 +343,7 @@ const CaseStudy = () => {
     {
       pill: "FEATURE 03 · DISCOVERY & CARE",
       title: "BOOKING A DOCTOR SHOULD FEEL LIKE BOOKING A FLIGHT",
-      desc: "Clear, fast, transparent. Doctor profiles surface what patients actually care about — wait time, reviews, fees, mode (in-person vs video) — without five taps to find any of it.",
+      desc: "Clear, fast, transparent. Doctor profiles surface what patients actually care about , wait time, reviews, fees, mode (in-person vs video) , without five taps to find any of it.",
       bullets: [
         {
           bold: "Trust signals upfront",
@@ -360,63 +363,39 @@ const CaseStudy = () => {
         }
       ],
       type: "booking"
-    },
-    {
-      pill: "FEATURE 04 · EMOTIONAL SUPPORT",
-      title: "HEALTH AS A SHARED JOURNEY, NOT A SOLO BATTLE",
-      desc: "Community features fill the emotional gap clinical apps always miss. Peer support, condition-specific circles, for un-biased AI anxiety booking, family plans.",
-      bullets: [
-        {
-          bold: "Moderated spaces",
-          text: "Peer circles verified and moderated to keep health discussions constructive and safe."
-        },
-        {
-          bold: "Membership value ladder",
-          text: "Free advice tier up to premium priorities like immediate ambulance dispatch."
-        },
-        {
-          bold: "Anonymous participation",
-          text: "Post sensitive questions without revealing your identity to the community."
-        },
-        {
-          bold: "Gamified milestones",
-          text: "Daily healthy habits converted into loyalty coins and membership extensions."
-        }
-      ],
-      type: "community"
     }
   ];
 
 
   const journeySteps = [
     {
-      title: "THE HOME DASHBOARD — A PERSONAL HEALTH BRIEFING",
-      desc: "Greeted by name with a contextual nudge ('You haven't logged a checkup in 3 months'). Shows upcoming appointment, AI summary badge, and the SOS — always visible, always one tap.",
+      title: "THE HOME DASHBOARD , A PERSONAL HEALTH BRIEFING",
+      desc: "Greeted by name with a contextual nudge ('You haven't logged a checkup in 3 months'). Shows upcoming appointment, AI summary badge, and the SOS , always visible, always one tap.",
       icon: "home"
     },
     {
-      title: "AI SUMMARY — CONFUSION TO CLARITY IN 8 SECONDS",
-      desc: "He opens his HbA1c. Instead of a raw PDF: 'Slightly elevated — no immediate concern.' Traffic-light orange. Tap 'What should I do?' for three plain-language steps.",
+      title: "AI SUMMARY , CONFUSION TO CLARITY IN 8 SECONDS",
+      desc: "He opens his HbA1c. Instead of a raw PDF: 'Slightly elevated , no immediate concern.' Traffic-light orange. Tap 'What should I do?' for three plain-language steps.",
       icon: "dna"
     },
     {
-      title: "BOOKING A FOLLOW-UP — THREE TAPS",
+      title: "BOOKING A FOLLOW-UP , THREE TAPS",
       desc: "AI surfaces a 'Book a follow-up' card. Sees Dr. Sharma (4.9, verified, 10 AM), picks slot, confirms. Health history pre-attached. Under 90 seconds.",
       icon: "calendar"
     },
     {
-      title: "CHECKING IN WITH THE COMMUNITY — HE'S NOT ALONE",
-      desc: "Joins a Diabetes Support Circle. Saves a meal plan that worked for someone with elevated HbA1c. Moderated, safe, verified — built into his health context.",
+      title: "CHECKING IN WITH THE COMMUNITY , HE'S NOT ALONE",
+      desc: "Joins a Diabetes Support Circle. Saves a meal plan that worked for someone with elevated HbA1c. Moderated, safe, verified , built into his health context.",
       icon: "people"
     },
     {
-      title: "THE ACCIDENT FLOW — A SCENARIO HE HOPED HE'D NEVER NEED",
+      title: "THE ACCIDENT FLOW , A SCENARIO HE HOPED HE'D NEVER NEED",
       desc: "Witnesses an accident. Taps 'Report Nearby Incident,' confirms location (auto-detected), submits. Information relayed to nearest responders.",
       icon: "siren"
     },
     {
-      title: "END OF DAY — HEALTH IS MANAGED, NOT CHASED",
-      desc: "Understood a scary report, booked a doctor, found community, helped in an emergency — one app, one day. He didn't manage healthcare. s.e.h.a.t managed it with him.",
+      title: "END OF DAY , HEALTH IS MANAGED, NOT CHASED",
+      desc: "Understood a scary report, booked a doctor, found community, helped in an emergency , one app, one day. He didn't manage healthcare. s.e.h.a.t managed it with him.",
       icon: "sparkle"
     }
   ];
@@ -424,22 +403,22 @@ const CaseStudy = () => {
   const challenges = [
     {
       title: "EMERGENCY UX VS. ACCIDENTAL TRIGGERS",
-      desc: "SOS needed instant reach — but no accidental taps. Solution: 3-second hold. Long enough to prevent pocket-dials, short enough that real emergencies don't lose seconds. Stress-tested against panic scenarios.",
+      desc: "SOS needed instant reach , but no accidental taps. Solution: 3-second hold. Long enough to prevent pocket-dials, short enough that real emergencies don't lose seconds. Stress-tested against panic scenarios.",
       icon: "warning"
     },
     {
       title: "AI CONFIDENCE VS. MEDICAL ACCURACY",
-      desc: "AI summaries had to be clear and actionable — but overconfident AI in healthcare is dangerous. Every summary includes 'This is not a diagnosis,' always visible. Tone calibrated: informative, never prescriptive.",
+      desc: "AI summaries had to be clear and actionable , but overconfident AI in healthcare is dangerous. Every summary includes 'This is not a diagnosis,' always visible. Tone calibrated: informative, never prescriptive.",
       icon: "target"
     },
     {
       title: "FEATURE RICHNESS VS. INTERFACE SIMPLICITY",
-      desc: "28 screens, 6 modules — easily overwhelming. Solution: ruthless grouping. Home surfaces 4 most-likely actions by context. Five maximum tabs. Anything beyond lives in contextual entry points.",
+      desc: "28 screens, 6 modules , easily overwhelming. Solution: ruthless grouping. Home surfaces 4 most-likely actions by context. Five maximum tabs. Anything beyond lives in contextual entry points.",
       icon: "grid"
     },
     {
       title: "DESIGNING FOR BOTH 20-YEAR-OLDS AND 70-YEAR-OLDS",
-      desc: "Arjun expects density and speed. Ramesh needs large targets and simplified flows. Resolution: one design system with accessibility as baseline, plus optional 'Simplified Mode' — both thrive in one product.",
+      desc: "Arjun expects density and speed. Ramesh needs large targets and simplified flows. Resolution: one design system with accessibility as baseline, plus optional 'Simplified Mode' , both thrive in one product.",
       icon: "halfcircle"
     }
   ];
@@ -455,27 +434,27 @@ const CaseStudy = () => {
     {
       pill: "NEAR-TERM · V1.5",
       title: "PREDICTIVE AI HEALTH INSIGHTS",
-      desc: "Move from reactive summaries to proactive intelligence — AI spotting patterns across historical reports. 'Your cholesterol increased 12% across three tests. Consider consultation.' Preventive healthcare through pattern recognition."
+      desc: "Move from reactive summaries to proactive intelligence , AI spotting patterns across historical reports. 'Your cholesterol increased 12% across three tests. Consider consultation.' Preventive healthcare through pattern recognition."
     },
     {
       pill: "MID-TERM · V2.0",
       title: "WEARABLE & HEALTH DEVICE INTEGRATION",
-      desc: "Sync with Apple Health, Google Fit, fitness trackers — bringing real-time biometrics into AI summaries. HRV, sleep, steps become part of the health narrative."
+      desc: "Sync with Apple Health, Google Fit, fitness trackers , bringing real-time biometrics into AI summaries. HRV, sleep, steps become part of the health narrative."
     },
     {
       pill: "MID-TERM · V2.0",
       title: "VERNACULAR LANGUAGE SUPPORT",
-      desc: "India has 22 official languages. Hindi, Tamil, Bengali, Marathi summaries extend the value prop to 700M+ users — unlocking the next 10x of the addressable market."
+      desc: "India has 22 official languages. Hindi, Tamil, Bengali, Marathi summaries extend the value prop to 700M+ users , unlocking the next 10x of the addressable market."
     },
     {
       pill: "LONG-TERM · V3.0",
       title: "HYPER-PERSONALISED CARE PLANS",
-      desc: "A dynamic AI-generated personal roadmap evolving with the user — adjusting goals and connections based on health trajectory. s.e.h.a.t becomes a lifelong co-pilot."
+      desc: "A dynamic AI-generated personal roadmap evolving with the user , adjusting goals and connections based on health trajectory. s.e.h.a.t becomes a lifelong co-pilot."
     },
     {
       pill: "LONG-TERM · V3.0",
       title: "COMMUNITY-POWERED SECOND OPINIONS",
-      desc: "Verified specialists in communities provide informal opinions — moderated, time-limited, disclaimer-protected. Peer review backed by professional oversight."
+      desc: "Verified specialists in communities provide informal opinions , moderated, time-limited, disclaimer-protected. Peer review backed by professional oversight."
     }
   ];
 
@@ -542,7 +521,7 @@ const CaseStudy = () => {
             <span>CASE FILE &middot; 001 / MISSION BRIEF</span>
           </div>
 
-          {/* S.E.H.A.T spaced text */}
+          {/* s.e.h.a.t spaced text */}
           <span className="block font-sans text-neutral-400 text-[11px] font-bold tracking-[0.4em] uppercase mb-6">
             S &middot; E &middot; H &middot; A &middot; T
           </span>
@@ -556,7 +535,7 @@ const CaseStudy = () => {
 
           {/* Description */}
           <p className="font-sans text-neutral-400 text-sm sm:text-base md:text-lg leading-relaxed mb-12 max-w-xl italic">
-            An AI-powered, emergency-first healthcare ecosystem built not to compete but to rule &mdash; designed end-to-end across 28 screens.
+            An AI-powered, emergency-first healthcare ecosystem built not to compete but to rule , designed end-to-end across 28 screens.
           </p>
 
           {/* Metadata Row */}
@@ -605,27 +584,23 @@ const CaseStudy = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-7">
             <span className="text-brand-red text-xs font-bold tracking-[0.2em] mb-3 block">01 / PROJECT OVERVIEW</span>
-            <h2 className="font-bebas text-4xl sm:text-5xl text-white tracking-wider mb-6">WHAT IS S.E.H.A.T.?</h2>
+            <h2 className="font-bebas text-4xl sm:text-5xl text-white tracking-wider mb-6">WHAT IS s.e.h.a.t?</h2>
             <div className="font-sans text-neutral-400 text-sm sm:text-base leading-relaxed space-y-6">
               <p>
-                <strong className="text-white font-semibold">S.E.H.A.T.</strong> (Hindi for "health") is a comprehensive healthcare mobile application built for the modern Indian user — one who navigates a fragmented, often confusing health ecosystem every single day.
+                <strong className="text-white font-semibold">s.e.h.a.t</strong> (Hindi for "health") is a comprehensive healthcare mobile application built for the modern Indian user , one who navigates a fragmented, often confusing health ecosystem every single day.
               </p>
               <p>
-                Designed to compete with platforms like Practo and PharmEasy, s.e.h.a.t. goes beyond appointment booking and medicine delivery. It brings together AI-powered medical intelligence, real-time emergency response, community care, and personalized health management all within one cohesive, accessible experience.
+                Designed to compete with platforms like Practo and PharmEasy, s.e.h.a.t goes beyond appointment booking and medicine delivery. It brings together AI-powered medical intelligence, real-time emergency response, community care, and personalized health management all within one cohesive, accessible experience.
               </p>
               <p>
-                As the sole Product & UI/UX Designer, I was responsible for the end-to-end design process — from research synthesis to interaction design, visual design, and a unified design system.
+                As the sole Product & UI/UX Designer, I was responsible for the end-to-end design process , from research synthesis to interaction design, visual design, and a unified design system.
               </p>
             </div>
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-            <div className="bg-[#050505] border border-neutral-900 p-6 flex flex-col justify-center text-center">
+            <div className="col-span-2 bg-[#050505] border border-neutral-900 p-6 flex flex-col justify-center text-center">
               <span className="font-bebas text-4xl sm:text-5xl text-brand-red font-bold mb-1">28+</span>
               <span className="font-sans text-[9px] font-bold tracking-widest text-neutral-400 uppercase">SCREENS DESIGNED</span>
-            </div>
-            <div className="bg-[#050505] border border-neutral-900 p-6 flex flex-col justify-center text-center">
-              <span className="font-bebas text-4xl sm:text-5xl text-brand-red font-bold mb-1">6</span>
-              <span className="font-sans text-[9px] font-bold tracking-widest text-neutral-400 uppercase">FEATURE MODULES</span>
             </div>
             <div className="bg-[#050505] border border-neutral-900 p-6 flex flex-col justify-center text-center">
               <span className="font-bebas text-4xl sm:text-5xl text-brand-red font-bold mb-1">3</span>
@@ -649,7 +624,7 @@ const CaseStudy = () => {
         {/* Quote Block */}
         <div className="border-l-[3px] border-brand-red pl-6 py-2 my-10 max-w-3xl">
           <p className="font-bebas text-xl sm:text-2xl text-white tracking-wide leading-relaxed uppercase">
-            "COMPETITORS HAVE DIGITISED HEALTHCARE ACCESS — BUT THEY HAVEN'T MADE HEALTHCARE HUMAN. THEY OPTIMISE FOR TRANSACTIONS, NOT FOR THE PERSON IN CRISIS AT 2 AM."
+            "COMPETITORS HAVE DIGITISED HEALTHCARE ACCESS , BUT THEY HAVEN'T MADE HEALTHCARE HUMAN. THEY OPTIMISE FOR TRANSACTIONS, NOT FOR THE PERSON IN CRISIS AT 2 AM."
           </p>
         </div>
 
@@ -710,7 +685,7 @@ const CaseStudy = () => {
         <span className="text-brand-red text-xs font-bold tracking-[0.2em] mb-3 block">04 / TARGET USERS</span>
         <h2 className="font-bebas text-4xl sm:text-5xl text-white tracking-wider mb-6">THREE PEOPLE. ONE APP FOR ALL OF THEM.</h2>
         <p className="font-sans text-neutral-400 text-sm sm:text-base mb-12 max-w-2xl leading-relaxed">
-          s.e.h.a.t. is designed for the full spectrum of Indian healthcare users — from the digital-native millennial to the elderly parent managing chronic conditions.
+          s.e.h.a.t is designed for the full spectrum of Indian healthcare users , from the digital-native millennial to the elderly parent managing chronic conditions.
         </p>
 
         {/* Persona Grid */}
@@ -780,7 +755,7 @@ const CaseStudy = () => {
             <div className="bg-brand-red/5 border border-brand-red/20 p-8 rounded-none relative">
               <span className="font-sans text-[10px] font-bold tracking-[0.2em] text-brand-red uppercase block mb-4">THE STRATEGIC OPENING</span>
               <p className="font-bebas text-2xl text-white tracking-wide leading-tight uppercase mb-6">
-                NO INDIAN HEALTHCARE APP OWNS THE INTERSECTION OF AI-POWERED CLARITY AND EMERGENCY PREPAREDNESS. THIS GAP IS S.E.H.A.T.'S STRATEGIC OPENING.
+                NO INDIAN HEALTHCARE APP OWNS THE INTERSECTION OF AI-POWERED CLARITY AND EMERGENCY PREPAREDNESS. THIS GAP IS s.e.h.a.t'S STRATEGIC OPENING.
               </p>
               
               <div className="border-t border-brand-red/10 pt-6 mt-6">
@@ -839,14 +814,15 @@ const CaseStudy = () => {
 
         <div className="space-y-32">
           {features.map((feature, idx) => (
-            <div key={idx} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div key={idx} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center lg:items-stretch">
               
               {/* Mockup Column */}
               <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
-                {feature.type === 'summary' && <SummaryMockup />}
-                {feature.type === 'sos' && <SOSMockup />}
-                {feature.type === 'booking' && <BookingMockup />}
-                {feature.type === 'community' && <CommunityMockup />}
+                <div className="w-[280px] h-[450px] lg:h-full relative rounded-2xl overflow-hidden border border-neutral-900 bg-neutral-950">
+                  {feature.type === 'summary' && <img src={medicalSummImg} alt="Medical Summary" className="absolute inset-0 w-full h-full object-cover object-top" />}
+                  {feature.type === 'sos' && <img src={sosImg} alt="SOS" className="absolute inset-0 w-full h-full object-cover object-top" />}
+                  {feature.type === 'booking' && <img src={appointmentsImg} alt="Appointments" className="absolute inset-0 w-full h-full object-cover object-top" />}
+                </div>
               </div>
 
               {/* Feature Content */}
@@ -867,7 +843,7 @@ const CaseStudy = () => {
                     <div key={bIdx} className="flex items-start gap-3 text-xs sm:text-sm">
                       <span className="text-brand-red font-bold select-none mt-0.5">▸</span>
                       <p className="font-sans text-neutral-400 leading-relaxed">
-                        <strong className="text-white font-bold">{bullet.bold}</strong> — {bullet.text}
+                        <strong className="text-white font-bold">{bullet.bold}</strong> , {bullet.text}
                       </p>
                     </div>
                   ))}
@@ -915,7 +891,7 @@ const CaseStudy = () => {
                   AaBbCc
                 </span>
                 <span className="font-sans font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-none text-brand-red tracking-wide block mt-3">
-                  123 &mdash; !
+                  123 , !
                 </span>
               </div>
             </div>
@@ -936,7 +912,7 @@ const CaseStudy = () => {
             <div className="w-full overflow-hidden rounded-2xl border border-neutral-900/40 bg-[#050505]">
               <img 
                 src={colorsImg} 
-                alt="S.E.H.A.T Color Palette" 
+                alt="s.e.h.a.t Color Palette" 
                 className="w-full h-auto block select-none pointer-events-none" 
               />
             </div>
@@ -961,11 +937,11 @@ const CaseStudy = () => {
 
         <h2 className="font-bebas text-6xl sm:text-7xl md:text-8xl text-white tracking-wider mb-6 uppercase leading-[0.9]">
           A DAY IN THE LIFE OF<br />
-          <span className="text-brand-red">A S.E.H.A.T USER.</span>
+          <span className="text-brand-red">A s.e.h.a.t USER.</span>
         </h2>
 
         <p className="font-sans text-neutral-400 text-sm sm:text-base mb-16 max-w-3xl leading-relaxed">
-          Arjun opens s.e.h.a.t on a Tuesday morning. Here's how the experience unfolds &mdash; and why each moment was designed the way it was.
+          Arjun opens s.e.h.a.t on a Tuesday morning. Here's how the experience unfolds , and why each moment was designed the way it was.
         </p>
 
         {/* 2-Column Grid of Walkthrough Steps */}
@@ -1161,19 +1137,19 @@ const CaseStudy = () => {
           <div className="border border-brand-red/20 bg-neutral-950/20 rounded-2xl p-8 hover:border-brand-red/35 transition-all duration-300">
             <h4 className="font-bebas text-xl text-white tracking-wider mb-4">USER TRUST &amp; CONFIDENCE</h4>
             <p className="font-sans text-neutral-450 text-xs sm:text-sm leading-relaxed">
-              Participants reported significantly higher confidence &mdash; 78% felt 'informed enough not to immediately call a doctor' after seeing a simplified report.
+              Participants reported significantly higher confidence , 78% felt 'informed enough not to immediately call a doctor' after seeing a simplified report.
             </p>
           </div>
           <div className="border border-brand-red/20 bg-neutral-950/20 rounded-2xl p-8 hover:border-brand-red/35 transition-all duration-300">
             <h4 className="font-bebas text-xl text-white tracking-wider mb-4">EMERGENCY FEATURE ADOPTION</h4>
             <p className="font-sans text-neutral-450 text-xs sm:text-sm leading-relaxed">
-              Accident reporting rated highest in 'would actually use' intent &mdash; 86% said it addressed a fear no app had ever solved.
+              Accident reporting rated highest in 'would actually use' intent , 86% said it addressed a fear no app had ever solved.
             </p>
           </div>
           <div className="border border-brand-red/20 bg-neutral-950/20 rounded-2xl p-8 hover:border-brand-red/35 transition-all duration-300">
             <h4 className="font-bebas text-xl text-white tracking-wider mb-4">RETENTION POTENTIAL</h4>
             <p className="font-sans text-neutral-450 text-xs sm:text-sm leading-relaxed">
-              Community drove highest dwell time &mdash; 6.2 min/session vs. 2.1 min for non-community apps. Emotional engagement is the retention engine.
+              Community drove highest dwell time , 6.2 min/session vs. 2.1 min for non-community apps. Emotional engagement is the retention engine.
             </p>
           </div>
         </div>
@@ -1252,13 +1228,13 @@ const CaseStudy = () => {
 
           <div className="font-sans text-white/90 text-sm sm:text-base leading-relaxed space-y-8 max-w-5xl">
             <p>
-              Healthcare is the design domain where the gap between good and mediocre work has the most profound real-world consequences. Every choice &mdash; the size of a button, the tone of a summary, the placement of an SOS trigger &mdash; carries weight that goes far beyond aesthetics.
+              Healthcare is the design domain where the gap between good and mediocre work has the most profound real-world consequences. Every choice , the size of a button, the tone of a summary, the placement of an SOS trigger , carries weight that goes far beyond aesthetics.
             </p>
             <p>
-              Building s.e.h.a.t taught me that <strong className="font-bold text-white">empathy is not a phase of the design process &mdash; it is the design process.</strong> The breakthrough ideas didn't come from competitive analysis. They came from sitting with users' fears: a result you don't understand, an emergency with no one to call, feeling alone in your health journey.
+              Building s.e.h.a.t taught me that <strong className="font-bold text-white">empathy is not a phase of the design process , it is the design process.</strong> The breakthrough ideas didn't come from competitive analysis. They came from sitting with users' fears: a result you don't understand, an emergency with no one to call, feeling alone in your health journey.
             </p>
             <p>
-              Design systems aren't constraints &mdash; they are expressions of care. A consistent type hierarchy, generous touch targets, a colour system rooted in psychology &mdash; that's a promise to every user: <span className="italic">we thought about you, specifically.</span>
+              Design systems aren't constraints , they are expressions of care. A consistent type hierarchy, generous touch targets, a colour system rooted in psychology , that's a promise to every user: <span className="italic">we thought about you, specifically.</span>
             </p>
           </div>
         </div>

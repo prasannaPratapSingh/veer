@@ -301,17 +301,17 @@ const Home = () => {
           {/* Right Column Stacked Cards */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             
-            {/* Top Card: S.E.H.A.T Healthcare */}
+            {/* Top Card: s.e.h.a.t Healthcare */}
             <div className="block text-left bg-[#050505] border border-neutral-900 rounded-none h-[286px] p-6 sm:p-8 flex items-center justify-between overflow-hidden relative group hover:border-brand-red/40 transition-all duration-300">
               {/* Invisible clickable overlay to navigate to /sehat */}
-              <Link to="/sehat" className="absolute inset-0 z-10" aria-label="View S.E.H.A.T Healthcare Case Study"></Link>
+              <Link to="/sehat" className="absolute inset-0 z-10" aria-label="View s.e.h.a.t Healthcare Case Study"></Link>
               
               <div className="flex flex-col justify-between h-full z-20 max-w-[62%] pointer-events-none">
                 <span className="text-brand-red text-xs font-bold tracking-[0.2em]">2026</span>
                 
                 <div className="mt-auto">
                   <h3 className="font-bebas text-2xl sm:text-3xl lg:text-[2rem] text-white tracking-wider mb-2.5 leading-none">
-                    S.E.H.A.T HEALTHCARE
+                    s.e.h.a.t HEALTHCARE
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {["UI DESIGN", "DESIGN SYSTEM"].map((tag) => (
@@ -341,7 +341,7 @@ const Home = () => {
               <div className="w-[120px] sm:w-[150px] h-[90%] flex justify-end items-end absolute right-4 bottom-0 pointer-events-none group-hover:scale-105 transition-transform duration-500 z-10">
                 <img 
                   src={section3Img} 
-                  alt="S.E.H.A.T Healthcare Mockup" 
+                  alt="s.e.h.a.t Healthcare Mockup" 
                   className="h-full w-auto object-contain object-bottom" 
                 />
               </div>
@@ -482,7 +482,7 @@ const Home = () => {
                   "IT'S NOT WHO I AM UNDERNEATH, BUT WHAT I DO THAT DEFINES ME."
                 </p>
                 <p className="font-sans text-[9px] font-bold tracking-[0.2em] text-neutral-500 uppercase mt-3">
-                  — BATMAN, THE DARK KNIGHT
+                  , BATMAN, THE DARK KNIGHT
                 </p>
               </div>
 
