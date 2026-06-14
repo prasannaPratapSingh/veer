@@ -37,6 +37,30 @@ const ScrollToTop = () => {
 
 const Home = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState('home');
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 160; // Offset to trigger before section reaches the top
+
+      const homeSection = document.getElementById('home');
+      const workSection = document.getElementById('work');
+      const aboutSection = document.getElementById('about');
+
+      if (aboutSection && scrollPosition >= aboutSection.offsetTop) {
+        setActiveSection('about');
+      } else if (workSection && scrollPosition >= workSection.offsetTop) {
+        setActiveSection('work');
+      } else {
+        setActiveSection('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once initially
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const skills = [
     "UX DESIGN",
@@ -60,13 +84,34 @@ const Home = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            <a href="#" className="font-sans text-xs font-bold tracking-[0.2em] text-brand-red relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red">
+            <a 
+              href="#home" 
+              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${
+                activeSection === 'home' 
+                  ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red' 
+                  : 'text-neutral-400 hover:text-white'
+              }`}
+            >
               HOME
             </a>
-            <a href="#work" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
+            <a 
+              href="#work" 
+              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${
+                activeSection === 'work' 
+                  ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red' 
+                  : 'text-neutral-400 hover:text-white'
+              }`}
+            >
               WORK
             </a>
-            <a href="#about" className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300">
+            <a 
+              href="#about" 
+              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${
+                activeSection === 'about' 
+                  ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red' 
+                  : 'text-neutral-400 hover:text-white'
+              }`}
+            >
               ABOUT
             </a>
             <a 
@@ -91,7 +136,7 @@ const Home = () => {
       </header>
 
       {/* SECTION 1: HERO */}
-      <div className="min-h-screen flex flex-col justify-between relative overflow-hidden border-b border-neutral-900/40">
+      <div id="home" className="min-h-screen flex flex-col justify-between relative overflow-hidden border-b border-neutral-900/40">
         
         {/* Background Layer (Ambient, Text, and Illustration) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-10">
