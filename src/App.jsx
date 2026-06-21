@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import CaseStudy from './CaseStudy';
 import MouseFollower from './MouseFollower';
 import batmanImg from './assets/batman.png';
@@ -35,10 +36,38 @@ const ScrollToTop = () => {
 
   return null;
 };
-
 const Home = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [contactModalOpen, setContactModalOpen] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState(null);
   const [activeSection, setActiveSection] = React.useState('home');
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formRef.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then((result) => {
+        setSubmitStatus('success');
+        setIsSubmitting(false);
+        setTimeout(() => {
+          setContactModalOpen(false);
+          setSubmitStatus(null);
+          e.target.reset();
+        }, 2000);
+      }, (error) => {
+        setSubmitStatus('error');
+        setIsSubmitting(false);
+      });
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +103,7 @@ const Home = () => {
 
   return (
     <div className="bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
-      
+
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-neutral-900/40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -85,39 +114,36 @@ const Home = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            <a 
-              href="#home" 
-              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${
-                activeSection === 'home' 
-                  ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red' 
-                  : 'text-neutral-400 hover:text-white'
-              }`}
+            <a
+              href="#home"
+              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${activeSection === 'home'
+                ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red'
+                : 'text-neutral-400 hover:text-white'
+                }`}
             >
               HOME
             </a>
-            <a 
-              href="#work" 
-              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${
-                activeSection === 'work' 
-                  ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red' 
-                  : 'text-neutral-400 hover:text-white'
-              }`}
+            <a
+              href="#work"
+              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${activeSection === 'work'
+                ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red'
+                : 'text-neutral-400 hover:text-white'
+                }`}
             >
               WORK
             </a>
-            <a 
-              href="#about" 
-              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${
-                activeSection === 'about' 
-                  ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red' 
-                  : 'text-neutral-400 hover:text-white'
-              }`}
+            <a
+              href="#about"
+              className={`font-sans text-xs font-bold tracking-[0.2em] relative transition-colors duration-300 ${activeSection === 'about'
+                ? 'text-brand-red after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-red'
+                : 'text-neutral-400 hover:text-white'
+                }`}
             >
               ABOUT
             </a>
-            <a 
-              href="/Karnveer_Dixit_Resume_Updated.pdf" 
-              download="Karnveer_Dixit_Resume_Updated.pdf" 
+            <a
+              href="/Karnveer_Dixit_Resume_Updated.pdf"
+              download="Karnveer_Dixit_Resume_Updated.pdf"
               className="font-sans text-xs font-bold tracking-[0.2em] text-neutral-400 hover:text-white transition-colors duration-300"
             >
               RESUME
@@ -126,8 +152,8 @@ const Home = () => {
 
           {/* Contact Me CTA */}
           <div>
-            <a 
-              href="#connect" 
+            <a
+              href="#connect"
               className="font-sans text-xs font-bold tracking-[0.15em] bg-brand-red hover:bg-[#ff1a1a] text-white px-6 py-3 rounded-none flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20"
             >
               CONTACT ME <span className="text-sm">→</span>
@@ -138,7 +164,7 @@ const Home = () => {
 
       {/* SECTION 1: HERO */}
       <div id="home" className="min-h-screen flex flex-col justify-between relative overflow-hidden border-b border-neutral-900/40">
-        
+
         {/* Background Layer (Ambient, Text, and Illustration) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-10">
           {/* Background Ambient Glows */}
@@ -152,9 +178,9 @@ const Home = () => {
 
           {/* Batman Image Container */}
           <div className="absolute right-0 bottom-0 top-0 w-full lg:w-1/2 flex items-end justify-end z-10">
-            <img 
-              src={batmanImg} 
-              alt="Karnveer Dixit | Batman Design" 
+            <img
+              src={batmanImg}
+              alt="Karnveer Dixit | Batman Design"
               className="h-[65vh] sm:h-[70vh] lg:h-[96vh] xl:h-[105vh] w-auto max-w-none object-contain object-bottom translate-x-[15%] sm:translate-x-[10%] lg:translate-x-[5%] xl:translate-x-[1%] opacity-35 lg:opacity-100 transition-all duration-300 filter contrast-[1.15] brightness-[0.95]"
             />
           </div>
@@ -163,7 +189,7 @@ const Home = () => {
         {/* Hero Main Section */}
         <main className="flex-grow flex items-center relative z-20 max-w-7xl w-full mx-auto px-6 pt-24 pb-12 md:pt-32 md:pb-16">
           <div className="w-full lg:max-w-[58%] flex flex-col justify-center relative z-20">
-            
+
             {/* Content Container */}
             <div className="relative z-10">
               {/* Subtitle */}
@@ -188,14 +214,14 @@ const Home = () => {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 sm:gap-6">
-                <a 
-                  href="#work" 
+                <a
+                  href="#work"
                   className="font-sans text-xs sm:text-sm font-bold tracking-[0.2em] bg-brand-red hover:bg-[#ff1a1a] text-white px-8 py-4 flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/25"
                 >
                   VIEW MY WORK <span className="text-base">→</span>
                 </a>
-                <a 
-                  href="#bat-signal" 
+                <a
+                  href="#bat-signal"
                   className="font-sans text-xs sm:text-sm font-bold tracking-[0.2em] bg-transparent border border-brand-red hover:bg-brand-red/10 text-white px-8 py-4 transition-all duration-300 hover:scale-105 active:scale-95"
                 >
                   LET'S CONNECT
@@ -238,7 +264,7 @@ const Home = () => {
 
       {/* SECTION 2: SELECTED WORK */}
       <section id="work" className="relative py-24 sm:py-32 max-w-7xl mx-auto px-6 z-20 scroll-mt-24">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between w-full mb-16 gap-6">
           <div className="relative">
@@ -264,25 +290,25 @@ const Home = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
-          
+
           {/* Left Large Project Card: Pharmacist Shubham */}
-          <div 
+          <div
             onClick={() => setModalOpen(true)}
             className="cursor-pointer lg:col-span-7 bg-[#050505] border border-neutral-900 rounded-none overflow-hidden relative group hover:border-brand-red/40 transition-all duration-300 flex flex-col justify-between h-[380px] sm:h-[480px] lg:h-[600px] p-6 sm:p-8"
           >
             {/* Background Image */}
             <div className="absolute inset-0 z-0 opacity-35 group-hover:opacity-55 group-hover:scale-[1.01] transition-all duration-700 pointer-events-none">
-              <img 
-                src={section2Img} 
-                alt="Pharmacist Shubham Mockup" 
-                className="w-full h-full object-cover object-center" 
+              <img
+                src={section2Img}
+                alt="Pharmacist Shubham Mockup"
+                className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
             </div>
-            
+
             {/* Year */}
             <span className="text-brand-red text-xs font-bold tracking-[0.2em] z-10">2026</span>
-            
+
             {/* Project Details */}
             <div className="z-10 mt-auto">
               <h3 className="font-bebas text-3xl sm:text-4xl lg:text-[2.75rem] text-white tracking-wider mb-4 leading-none">
@@ -300,15 +326,15 @@ const Home = () => {
 
           {/* Right Column Stacked Cards */}
           <div className="lg:col-span-5 flex flex-col gap-8">
-            
+
             {/* Top Card: s.e.h.a.t Healthcare */}
             <div className="block text-left bg-[#050505] border border-neutral-900 rounded-none h-[286px] p-6 sm:p-8 flex items-center justify-between overflow-hidden relative group hover:border-brand-red/40 transition-all duration-300">
               {/* Invisible clickable overlay to navigate to /sehat */}
               <Link to="/sehat" className="absolute inset-0 z-10" aria-label="View s.e.h.a.t Healthcare Case Study"></Link>
-              
+
               <div className="flex flex-col justify-between h-full z-20 max-w-[62%] pointer-events-none">
                 <span className="text-brand-red text-xs font-bold tracking-[0.2em]">2026</span>
-                
+
                 <div className="mt-auto">
                   <h3 className="font-bebas text-2xl sm:text-3xl lg:text-[2rem] text-white tracking-wider mb-2.5 leading-none">
                     s.e.h.a.t HEALTHCARE
@@ -324,7 +350,7 @@ const Home = () => {
               </div>
 
               {/* Blinking Live Link Button - Positioned absolutely at the right end */}
-              <a 
+              <a
                 href="https://play.google.com/store/apps/details?id=com.sehat.health.app"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -339,29 +365,29 @@ const Home = () => {
               </a>
               {/* Right side Phone Mockup */}
               <div className="w-[120px] sm:w-[150px] h-[90%] flex justify-end items-end absolute right-4 bottom-0 pointer-events-none group-hover:scale-105 transition-transform duration-500 z-10">
-                <img 
-                  src={section3Img} 
-                  alt="s.e.h.a.t Healthcare Mockup" 
-                  className="h-full w-auto object-contain object-bottom" 
+                <img
+                  src={section3Img}
+                  alt="s.e.h.a.t Healthcare Mockup"
+                  className="h-full w-auto object-contain object-bottom"
                 />
               </div>
             </div>
 
             {/* Bottom Card: Loyalty Rewards */}
-            <div 
+            <div
               onClick={() => setModalOpen(true)}
               className="cursor-pointer bg-[#050505] border border-neutral-900 rounded-none h-[286px] p-6 sm:p-8 overflow-hidden relative group hover:border-brand-red/40 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Background Mockup Image */}
               <div className="absolute inset-0 z-0 opacity-30 group-hover:opacity-50 group-hover:scale-[1.01] transition-all duration-700 pointer-events-none">
-                <img 
-                  src={section4Img} 
-                  alt="Loyalty Rewards Mockup" 
-                  className="w-full h-full object-cover object-center" 
+                <img
+                  src={section4Img}
+                  alt="Loyalty Rewards Mockup"
+                  className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
               </div>
-              
+
               <div className="flex flex-col justify-between h-full z-10 w-full">
                 <span className="text-brand-red text-xs font-bold tracking-[0.2em] mb-auto">2025</span>
                 <div>
@@ -384,18 +410,18 @@ const Home = () => {
 
         {/* Internship Experience Row */}
         <div className="border-t border-neutral-900/60 pt-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          
+
           {/* Left side details */}
           <div className="md:col-span-5 flex flex-col gap-4">
             {/* Logo image */}
             <div className="flex items-center">
-              <img 
-                src={r2rLogo} 
-                alt="Root2Rise Logo" 
-                className="h-9 w-auto object-contain select-none pointer-events-none" 
+              <img
+                src={r2rLogo}
+                alt="Root2Rise Logo"
+                className="h-9 w-auto object-contain select-none pointer-events-none"
               />
             </div>
-            
+
             {/* Role & Date */}
             <div>
               <h4 className="font-sans text-xs font-bold tracking-[0.2em] text-white uppercase mb-1.5">
@@ -427,7 +453,7 @@ const Home = () => {
       <section id="about" className="relative py-24 sm:py-32 border-t border-neutral-900/60 bg-black z-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Column: Text & Skills & Quote */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               {/* Subtitle */}
@@ -491,10 +517,10 @@ const Home = () => {
             {/* Right Column: Portrait Image */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[420px] lg:max-w-none aspect-[4/5] sm:aspect-square lg:aspect-[4/5] overflow-hidden rounded-[24px] border border-neutral-900/60 shadow-2xl group hover:border-brand-red/30 transition-all duration-500">
-                <img 
-                  src={aboutImg} 
-                  alt="Karnveer Dixit" 
-                  className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 select-none pointer-events-none" 
+                <img
+                  src={aboutImg}
+                  alt="Karnveer Dixit"
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 select-none pointer-events-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black from-0% via-black/65 via-25% to-transparent to-50% pointer-events-none"></div>
               </div>
@@ -523,7 +549,7 @@ const Home = () => {
 
       {/* SECTION 4: CONTACT & FOOTER */}
       <section id="connect" className="relative py-24 sm:py-32 border-t border-transparent bg-black z-20 overflow-hidden scroll-mt-24">
-        
+
         {/* Red gradient radial glow at the top of the section */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[250px] bg-[radial-gradient(ellipse_at_top,rgba(229,9,20,0.18)_0%,transparent_70%)] pointer-events-none z-0"></div>
 
@@ -531,35 +557,35 @@ const Home = () => {
         <div className="absolute right-0 top-0 bottom-[260px] sm:bottom-[220px] w-full lg:w-1/2 overflow-hidden pointer-events-none z-10 flex items-start justify-end">
           {/* Red glow behind Batman */}
           <div className="absolute right-[10%] top-[10%] w-[350px] h-[350px] bg-brand-red/10 rounded-full blur-[110px]"></div>
-          
-          <img 
-            src={lastSectionImg} 
-            alt="Karnveer Dixit | Contact Batman Design" 
-            className="h-full w-auto max-w-none object-contain object-bottom select-none pointer-events-none opacity-25 lg:opacity-100 transition-opacity duration-300 translate-x-[10%] lg:translate-x-0" 
+
+          <img
+            src={lastSectionImg}
+            alt="Karnveer Dixit | Contact Batman Design"
+            className="h-full w-auto max-w-none object-contain object-bottom select-none pointer-events-none opacity-25 lg:opacity-100 transition-opacity duration-300 translate-x-[10%] lg:translate-x-0"
           />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-20">
-          
+
           {/* Headline and Call to Action */}
           <div className="w-full lg:max-w-[55%] mb-20 relative z-20">
             <h2 className="font-bebas text-7xl sm:text-8xl md:text-9xl xl:text-[8.5rem] font-bold leading-[0.85] tracking-wide mb-6">
               <span className="block text-white">READY TO BUILD</span>
               <span className="block text-brand-red">GOTHAM?</span>
             </h2>
-            
+
             <p className="font-sans text-neutral-400 text-sm sm:text-base md:text-lg mb-10 max-w-md leading-relaxed">
               Let's design something the world hasn't seen yet.
             </p>
 
             {/* CTA Button */}
             <div id="bat-signal" className="scroll-mt-24">
-              <a 
-                href="mailto:dixitkarnveer@gmail.com" 
-                className="inline-flex items-center gap-3 font-sans text-xs sm:text-sm font-bold tracking-[0.2em] bg-brand-red hover:bg-[#ff1a1a] text-white px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/25 uppercase"
+              <button
+                onClick={() => setContactModalOpen(true)}
+                className="inline-flex items-center gap-3 font-sans text-xs sm:text-sm font-bold tracking-[0.2em] bg-brand-red hover:bg-[#ff1a1a] text-white px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/25 uppercase cursor-pointer border-none outline-none"
               >
                 SEND THE BAT-SIGNAL <span className="text-base">→</span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -568,14 +594,14 @@ const Home = () => {
 
           {/* Contact Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8 relative z-20">
-            
+
             {/* Column 1: Get in Touch */}
             <div className="flex flex-col gap-4">
               <span className="font-sans text-xs font-bold tracking-[0.2em] text-brand-red uppercase">
                 GET IN TOUCH
               </span>
-              <a 
-                href="mailto:dixitkarnveer@gmail.com" 
+              <a
+                href="mailto:dixitkarnveer@gmail.com"
                 className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center"
               >
                 <svg className="w-4 h-4 text-brand-red inline-block mr-2.5 align-middle" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -592,21 +618,21 @@ const Home = () => {
                 FIND ME ON
               </span>
               <div className="flex flex-col gap-3">
-                <a 
-                  href="https://www.linkedin.com/in/karnveer-dixit-9b5bb3333?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://www.linkedin.com/in/karnveer-dixit-9b5bb3333?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center"
                 >
                   <svg className="w-4 h-4 text-brand-red inline-block mr-2.5 align-middle" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.98 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.222 0z"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.98 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.222 0z" />
                   </svg>
                   Karnveer Dixit
                 </a>
-                <a 
-                  href="https://www.instagram.com/_karn.ux?igsh=MXh3MjZua2NxMTU1eA==" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://www.instagram.com/_karn.ux?igsh=MXh3MjZua2NxMTU1eA=="
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-sans text-sm sm:text-base font-bold text-white hover:text-brand-red transition-colors duration-300 inline-flex items-center"
                 >
                   <svg className="w-4 h-4 text-brand-red inline-block mr-2.5 align-middle" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -652,19 +678,111 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CASE STUDY LOCK MODAL */}
-      {modalOpen && (
-        <div 
-          className="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-backdrop-in"
-          onClick={() => setModalOpen(false)}
+      {/* CONTACT MODAL */}
+      {contactModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/85 backdrop-blur-md z-[60] flex items-center justify-center p-4 animate-backdrop-in"
+          onClick={() => setContactModalOpen(false)}
         >
-          <div 
+          <div
             className="bg-[#050505] border border-brand-red/30 w-full max-w-md p-8 sm:p-10 relative overflow-hidden flex flex-col items-center text-center rounded-none shadow-[0_0_50px_rgba(229,9,20,0.15)] animate-modal-in"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Ambient Corner Glow */}
             <div className="absolute -top-12 -right-12 w-40 h-40 bg-brand-red/10 rounded-full blur-2xl pointer-events-none"></div>
-            
+
+            <div className="w-12 h-12 rounded-full bg-brand-red/5 border border-brand-red/20 flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+
+            <h3 className="font-bebas text-4xl text-white tracking-wider mb-2 leading-tight">
+              SEND A SIGNAL
+            </h3>
+
+            <p className="font-sans text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 max-w-xs">
+              Reach out to me. I'll get back to you as soon as possible.
+            </p>
+
+            <form ref={formRef} onSubmit={sendEmail} className="w-full flex flex-col gap-4 text-left">
+              <div>
+                <label className="font-sans text-[10px] font-bold tracking-[0.2em] text-brand-red uppercase block mb-1.5">NAME</label>
+                <input
+                  type="text"
+                  name="user_name"
+                  required
+                  className="w-full bg-black/50 border border-neutral-800 focus:border-brand-red/60 outline-none text-white font-sans text-sm px-4 py-3 transition-colors duration-300"
+                  placeholder="Bruce Wayne"
+                />
+                <input
+                  type="hidden"
+                  name="user_time"
+                  value={new Date().toLocaleString()}
+                />
+              </div>
+              <div>
+                <label className="font-sans text-[10px] font-bold tracking-[0.2em] text-brand-red uppercase block mb-1.5">EMAIL</label>
+                <input
+                  type="email"
+                  name="user_email"
+                  required
+                  className="w-full bg-black/50 border border-neutral-800 focus:border-brand-red/60 outline-none text-white font-sans text-sm px-4 py-3 transition-colors duration-300"
+                  placeholder="bruce@wayne.enterprises"
+                />
+              </div>
+              <div>
+                <label className="font-sans text-[10px] font-bold tracking-[0.2em] text-brand-red uppercase block mb-1.5">MESSAGE</label>
+                <textarea
+                  name="message"
+                  required
+                  rows="3"
+                  className="w-full bg-black/50 border border-neutral-800 focus:border-brand-red/60 outline-none text-white font-sans text-sm px-4 py-3 transition-colors duration-300 resize-none"
+                  placeholder="We need you."
+                ></textarea>
+              </div>
+
+              {submitStatus === 'success' && (
+                <p className="text-green-500 font-sans text-xs text-center mt-2 font-bold tracking-wider">MESSAGE SENT SUCCESSFULLY!</p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="text-red-500 font-sans text-xs text-center mt-2 font-bold tracking-wider">FAILED TO SEND MESSAGE. PLEASE TRY AGAIN.</p>
+              )}
+
+              <div className="flex gap-3 mt-4">
+                <button
+                  type="button"
+                  onClick={() => setContactModalOpen(false)}
+                  className="font-sans text-xs font-bold tracking-[0.2em] bg-transparent border border-neutral-800 hover:border-neutral-600 text-white px-6 py-3.5 w-1/3 transition-all duration-300 uppercase cursor-pointer"
+                >
+                  CANCEL
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="font-sans text-xs font-bold tracking-[0.2em] bg-brand-red hover:bg-[#ff1a1a] text-white px-6 py-3.5 w-2/3 transition-all duration-300 uppercase shadow-lg shadow-brand-red/20 active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'SENDING...' : 'SEND SIGNAL'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* CASE STUDY LOCK MODAL */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-backdrop-in"
+          onClick={() => setModalOpen(false)}
+        >
+          <div
+            className="bg-[#050505] border border-brand-red/30 w-full max-w-md p-8 sm:p-10 relative overflow-hidden flex flex-col items-center text-center rounded-none shadow-[0_0_50px_rgba(229,9,20,0.15)] animate-modal-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Ambient Corner Glow */}
+            <div className="absolute -top-12 -right-12 w-40 h-40 bg-brand-red/10 rounded-full blur-2xl pointer-events-none"></div>
+
             {/* Locked Dossier Icon */}
             <div className="w-16 h-16 rounded-full bg-brand-red/5 border border-brand-red/20 flex items-center justify-center mb-6">
               <svg className="w-6 h-6 text-brand-red animate-pulse" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -681,12 +799,12 @@ const Home = () => {
             <h3 className="font-bebas text-4xl text-white tracking-wider mb-3 leading-tight">
               Coming Soon
             </h3>
-            
+
             <p className="font-sans text-neutral-400 text-xs sm:text-sm leading-relaxed mb-8 max-w-xs">
               This case file will be updated soon.
             </p>
 
-            <button 
+            <button
               onClick={() => setModalOpen(false)}
               className="font-sans text-xs font-bold tracking-[0.2em] bg-brand-red hover:bg-[#ff1a1a] text-white px-8 py-3.5 w-full rounded-none transition-all duration-300 uppercase shadow-lg shadow-brand-red/20 active:scale-95 cursor-pointer"
             >
